@@ -113,6 +113,11 @@ dependencies:
 flutter pub get
 ```
 
+> Web builds are not supported when the TFLite adapter is active. The
+> tflite_flutter package relies on native FFI bindings that cannot be
+> transpiled to JavaScript. Web projects should use MockAdapter or a
+> web-compatible adapter.
+
 ### Flutter developers who want both
 
 If you already have Flutter installed and want the CLI alongside the package:
