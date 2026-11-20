@@ -230,6 +230,20 @@ void main(List<String> arguments) async {
         help: 'Webhook provider: slack, discord, or teams', defaultsTo: 'slack')
     ..addFlag('webhook-on-pass',
         help: 'Also send webhook when tests pass (default: only on failure)')
+    ..addFlag('adaptive-chaos',
+        help: 'Inject adaptive chaos based on model feedback',
+        defaultsTo: false)
+    ..addFlag('estimate',
+        help: 'Estimate stress test resource cost', defaultsTo: false)
+    ..addOption('estimate-profile',
+        help: 'Hardware profile for cost estimation (mobile, tablet, edge)',
+        defaultsTo: 'mobile')
+    ..addFlag('estimate-cloud',
+        help: 'Include cloud telemetry estimate', defaultsTo: false)
+    ..addOption('language',
+        abbr: 'L',
+        help: 'Report language (en, zh, es, ja, de, fr)',
+        defaultsTo: 'en')
     ..addFlag('help', abbr: 'h', help: 'Show this help', negatable: false);
 
   try {
