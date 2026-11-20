@@ -131,6 +131,12 @@ jobs:
           sdkmanager "cmake;3.31.0"
         shell: bash
 
+      - name: Verify Android SDK
+        run: |
+          echo "ANDROID_HOME: $ANDROID_HOME"
+          sdkmanager --list | head -10
+        shell: bash
+
       - name: Create local.properties for Android SDK
         run: |
           echo "sdk.dir=$ANDROID_HOME" > android/local.properties
@@ -140,8 +146,18 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Build debug APK
-        run: flutter build apk --debug
+      - name: Install devtools dependencies
+        run: |
+          cd packages/sate_ai_devtools
+          flutter pub get
+          cd ../..
+        shell: bash
+
+      - name: Analyze code
+        run: flutter analyze --fatal-infos
+
+      - name: Run tests
+        run: flutter test
 
   sate-android:
     name: sate_android (Kotlin)
