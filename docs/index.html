@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SATE AI: Fault Injection Framework for On-Device AI in Flutter</title>
+  <title>SATE AI – Fault Injection Framework for On-Device AI in Flutter</title>
   <meta name="description" content="SATE AI is a fault injection framework for testing on-device AI models in Flutter applications. Simulate memory pressure, malformed inputs, thermal throttling, quantization drift, latency, SQLite report storage, and CI/CD status badges before deployment.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,6 @@
         <li><a href="#reporting">Reports &amp; Storage</a></li>
         <li><a href="#vscode">VS Code Extension</a></li>
         <li><a href="paper.html">Paper</a></li>
-        <li><a href="showcase.html">Showcase</a></li>
         <li><a href="https://pub.dev/packages/sate_ai" target="_blank" rel="noopener noreferrer" class="nav-pub-link">pub.dev</a></li>
         <li><a href="https://github.com/assassinaj602/sate_ai" target="_blank" rel="noopener noreferrer" class="nav-github-link">GitHub</a></li>
       </ul>
@@ -149,7 +148,7 @@
 
       <div class="grid-2">
         <div>
-          <h3 class="subsection-title">12 Fault Injectors</h3>
+          <h3 class="subsection-title">11 Fault Injectors</h3>
           <div class="feature-grid">
             <article class="card">
               <span class="chip chip-pass">Memory</span>
@@ -205,11 +204,6 @@
               <span class="chip chip-accent">Version</span>
               <h4>ModelVersionMismatchInjector</h4>
               <p>Simulates model schema mismatches and fallback handlers.</p>
-            </article>
-            <article class="card">
-              <span class="chip chip-fail">Adaptive</span>
-              <h4>AdaptiveChaosInjector</h4>
-              <p>Modulates injection pacing and memory dynamically using live CPU, RAM, and thermal telemetry.</p>
             </article>
           </div>
         </div>
@@ -276,15 +270,6 @@
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
           </div>
           <pre class="code-body"><code>sate_ai --model model.gguf --injectors memoryPressure,malformedInput --retry 3 --flaky-threshold 2</code></pre>
-        </div>
-
-        <div class="code-box">
-          <div class="code-header">
-            <span class="code-title">Adaptive Chaos &amp; Pre-Flight Cost Estimation</span>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-          </div>
-          <pre class="code-body"><code>sate_ai --model model.gguf --adaptive-chaos --injectors memoryPressure,thermalThrottle
-sate_ai --estimate --injectors memoryPressure,thermalThrottle --estimate-profile edge</code></pre>
         </div>
 
         <div class="code-box">
@@ -403,21 +388,6 @@ sate_ai --model model.gguf --template templates/slack.yaml --output custom_repor
           <h3>Example App</h3>
           <p>Sample Flutter app demonstrating multi-adapter and injector testing UI.</p>
         </a>
-
-        <a href="showcase.html" class="card doc-card">
-          <h3>Showcase Gallery</h3>
-          <p>Explore production edge apps, LLM observability suites, and research projects using SATE AI.</p>
-        </a>
-
-        <a href="https://github.com/assassinaj602/sate_ai/blob/main/cookbook/cost_estimation.md" target="_blank" rel="noopener noreferrer" class="card doc-card">
-          <h3>Cost Estimation</h3>
-          <p>Pre-flight duration, memory, battery drain, and cloud API spend estimation.</p>
-        </a>
-
-        <a href="https://github.com/assassinaj602/sate_ai/blob/main/cookbook/adaptive_chaos_testing.md" target="_blank" rel="noopener noreferrer" class="card doc-card">
-          <h3>Adaptive Chaos</h3>
-          <p>Dynamic chaos schedules auto-modulated by device CPU, RAM, and thermal state.</p>
-        </a>
       </div>
     </div>
   </section>
@@ -432,10 +402,8 @@ sate_ai --model model.gguf --template templates/slack.yaml --output custom_repor
       <div class="footer-links">
         <a href="https://github.com/assassinaj602/sate_ai/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>
         <a href="https://github.com/assassinaj602/sate_ai" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
-        <a href="https://github.com/marketplace/actions/sate-ai-stress-test" target="_blank" rel="noopener noreferrer">Marketplace Action</a>
         <a href="https://pub.dev/packages/sate_ai" target="_blank" rel="noopener noreferrer">pub.dev Package</a>
         <a href="paper.html">Research Paper</a>
-        <a href="showcase.html">Showcase Gallery</a>
         <a href="https://github.com/assassinaj602/sate_ai/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributor Guide</a>
       </div>
       <div class="footer-copy">

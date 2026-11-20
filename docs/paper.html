@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SATE AI: Research Paper &amp; Specification</title>
+  <title>SATE AI – Research Paper &amp; Specification</title>
   <meta name="description" content="SATE AI Research Paper: Fault Injection Framework for On-Device AI Models in Flutter applications. Read the full paper abstract, architecture, and download PDF/BibTeX.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,7 +102,6 @@
         <li><a href="index.html#features">Features</a></li>
         <li><a href="index.html#quickstart">Quick Start</a></li>
         <li><a href="paper.html" class="active">Research Paper</a></li>
-        <li><a href="showcase.html">Showcase</a></li>
         <li><a href="https://pub.dev/packages/sate_ai" target="_blank" rel="noopener noreferrer" class="nav-pub-link">pub.dev</a></li>
         <li><a href="https://github.com/assassinaj602/sate_ai" target="_blank" rel="noopener noreferrer" class="nav-github-link">GitHub</a></li>
       </ul>
@@ -132,24 +131,24 @@
     <article>
       <section class="paper-section">
         <h2>Abstract / Summary</h2>
-        <p>Deploying quantized neural networks and large language models (LLMs) on consumer edge and mobile devices subjects inference pipelines to volatile runtime conditions: memory pressure, dynamic thermal throttling, quantization drift, unvalidated user inputs, and sensor data corruptions. Existing mobile testing paradigms lack specialized fault injection mechanisms tailored for AI inference runtimes.</p>
-        <p>We present <strong>SATE AI</strong>, a cross-platform fault injection and reliability engineering framework across Flutter, Dart, Android Native (Kotlin), and Web/Node.js (TypeScript) ecosystems. SATE AI evaluates model robustness across 12 domain-specific failure modes and 8 inference adapters. We evaluate SATE AI across four production model architectures (MobileNetV2 TFLite INT8, MobileNetV2 ONNX FP32, ResNet-18 ONNX FP16, and SmolLM-135M GGUF Q4) deployed on physical ARM64 smartphone hardware (TECNO CH7n, MediaTek Helio G85, 8GB RAM, Android 12). SATE AI reveals latency expansions of up to 4.8x under thermal throttling, uncovers unhandled OOM terminations under 800MB heap pressure, and proves that closed-loop adaptive chaos sustains peak stress without triggering unrecoverable kernel process evictions.</p>
+        <p>On-device Artificial Intelligence (AI) models operating directly on mobile and edge devices face unpredictable runtime constraints including memory pressure, thermal throttling, quantization drift, unvalidated user inputs, network drops, and GPU resource contention. Existing mobile testing paradigms lack specialized fault injection mechanisms tailored for AI inference runtimes.</p>
+        <p>In this work, we present <strong>SATE AI</strong>, a systematic fault injection and evaluation framework for Flutter applications that evaluates model robustness across 11 key failure modes and 8 model adapters. The framework enables mobile developers and ML engineers to detect failure scenarios, memory leaks, and degradation prior to production deployment.</p>
       </section>
 
       <section class="paper-section">
         <h2>1. Software Architecture</h2>
-        <p>SATE AI enforces a decoupled architecture isolating fault injectors, model adapters, and orchestration runners. This allows model runtimes (such as ONNX Runtime, TensorFlow Lite, Fllama/llama.cpp, MediaPipe, Core ML, and Google ML Kit) to be evaluated under simulated stress scenarios without modifying the core model execution engine.</p>
+        <p>SATE AI enforces a decoupled architecture isolating fault injectors, model adapters, and orchestration runners. This allows model runtimes (such as ONNX Runtime, TensorFlow Lite, Fllama, MediaPipe, Core ML, and Google ML Kit) to be evaluated under simulated stress scenarios without modifying the core model execution engine.</p>
         
         <div class="figure-container">
           <img src="assets/figures/architecture.png" alt="SATE AI Architecture">
           <div class="figure-caption">Figure 1: SATE AI Architecture showing core components, adapters, and fault injectors.</div>
         </div>
 
-        <p>The framework features 12 fault injectors capable of targeting memory pressure, thermal degradation, quantization drift, latency spikes, input corruption, model swapping, confidence validation, network latency drops, GPU memory pressure, data corruption, version mismatches, and adaptive chaos injection modulated by live device telemetry.</p>
+        <p>The framework features 11 fault injectors capable of targeting memory pressure, thermal degradation, quantization drift, latency spikes, input corruption, model swapping, confidence validation, network latency drops, GPU memory pressure, data corruption, and version mismatches.</p>
 
         <div class="figure-container">
           <img src="assets/figures/injectors-overview.png" alt="Fault Injectors Overview">
-          <div class="figure-caption">Figure 2: Fault injectors suite and covered failure modes.</div>
+          <div class="figure-caption">Figure 2 – Fault injectors suite and covered failure modes.</div>
         </div>
       </section>
 
@@ -217,13 +216,13 @@
 
         <div class="figure-container">
           <img src="assets/figures/fault-injection-workflow.png" alt="Fault Injection Workflow">
-          <div class="figure-caption">Figure 3: The fault injection workflow: from model adapter to stress report.</div>
+          <div class="figure-caption">Figure 3 – The fault injection workflow: from model adapter to stress report.</div>
         </div>
       </section>
 
       <section class="paper-section">
-        <h2>4. Empirical Evaluation on Physical Hardware (TECNO CH7n)</h2>
-        <p>We executed multi-model empirical benchmarks on physical hardware: a TECNO CH7n smartphone running Android 12 with an octa-core MediaTek Helio G85 SoC and 8GB RAM. Table 2 summarizes latency percentiles, memory inflation, thermal elevation, and pass rates:</p>
+        <h2>3. Implementation &amp; Example Usage</h2>
+        <p>SATE AI provides a clean programmatic Dart API for developers to wrap custom on-device runtimes, define targeted injection thresholds, and process structured <code>StressReport</code> outputs in JSON, Markdown, HTML, or SQLite storage formats.</p>
 
         <div style="overflow-x: auto; margin: 1.5rem 0;">
           <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left;">
@@ -346,10 +345,15 @@
       </section>
 
       <section class="paper-section">
-        <h2>5. Conference Submission &amp; Open Access</h2>
+        <h2>4. Publication &amp; Journal Status Note</h2>
         <div class="notice-box">
-          <p><strong>Conference Submission:</strong> This full empirical paper is prepared for submission to premier software engineering conferences (ICSE / ASE / ISSTA). Complete benchmarking traces, model assets, and reproducibility scripts are available in the repository.</p>
+          <p><strong>Note on JOSS (Journal of Open Source Software) Submission:</strong> JOSS requires a minimum 6-month public repository commit history. As SATE AI was published in July 2026, formal submission to JOSS will be reconsidered after the 6-month public history window.</p>
         </div>
+      </section>
+
+      <section class="paper-section">
+        <h2>5. Availability &amp; Downloads</h2>
+        <p>SATE AI is open-source under the MIT license and published on pub.dev. Full LaTeX sources, BibTeX bibliography data, and research artifacts are accessible via the repository.</p>
         <ul>
           <li><strong>Paper Markdown:</strong> <a href="https://github.com/assassinaj602/sate_ai/blob/main/research/paper/paper.md" target="_blank" rel="noopener noreferrer">research/paper/paper.md</a></li>
           <li><strong>Zenodo Archive:</strong> <a href="https://doi.org/10.5281/zenodo.23250418" target="_blank" rel="noopener noreferrer">DOI: 10.5281/zenodo.23250418</a></li>
@@ -368,7 +372,6 @@
       </div>
       <div class="footer-links">
         <a href="index.html">Home</a>
-        <a href="showcase.html">Showcase Gallery</a>
         <a href="https://github.com/assassinaj602/sate_ai/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>
         <a href="https://github.com/assassinaj602/sate_ai" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
         <a href="https://pub.dev/packages/sate_ai" target="_blank" rel="noopener noreferrer">pub.dev Package</a>
