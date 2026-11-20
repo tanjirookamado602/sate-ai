@@ -14,7 +14,9 @@ void log(String message) {
 void _createInjector(String name) {
   // Validate name
   if (!RegExp(r'^[A-Z][a-zA-Z0-9]*$').hasMatch(name)) {
-    log('Error: Injector name must start with uppercase letter and contain only alphanumeric characters.');
+    log(
+      'Error: Injector name must start with uppercase letter and contain only alphanumeric characters.',
+    );
     exit(1);
   }
 
@@ -23,7 +25,9 @@ void _createInjector(String name) {
   final testDir = Directory('${projectDir.path}/test');
 
   if (!libDir.existsSync() || !testDir.existsSync()) {
-    log('Error: lib/ or test/ directory not found. Run this command from the project root.');
+    log(
+      'Error: lib/ or test/ directory not found. Run this command from the project root.',
+    );
     exit(1);
   }
 
@@ -53,7 +57,9 @@ void _createInjector(String name) {
   log('Next steps:');
   log('1. Implement your injection logic in $injectorPath');
   log('2. Add tests in $testPath');
-  log('3. Run: flutter test test/injectors/${name.toLowerCase()}_injector_test.dart');
+  log(
+    '3. Run: flutter test test/injectors/${name.toLowerCase()}_injector_test.dart',
+  );
   log('4. Export the injector in lib/sate_ai.dart');
 }
 
@@ -83,8 +89,9 @@ List<FaultInjector> _buildInjectors(ArgResults results, AIModelAdapter model) {
         injectors.add(ModelSwapInjector(model: model));
         break;
       case 'confidencevalidation':
-        injectors
-            .add(ConfidenceThresholdInjector(model: model, threshold: 0.5));
+        injectors.add(
+          ConfidenceThresholdInjector(model: model, threshold: 0.5),
+        );
         break;
       case 'adaptivechaos':
       case 'adaptive_chaos':
@@ -115,109 +122,107 @@ void main(List<String> arguments) async {
   }
 
   final parser = ArgParser()
-    ..addOption('model',
-        abbr: 'm',
-        help: 'Path to the model file (e.g., model.gguf)',
-        defaultsTo: 'cli-model')
-    ..addOption('injectors',
-        abbr: 'i',
-        help: 'Comma-separated list of injectors to use',
-        defaultsTo: 'memoryPressure,malformedInput')
-    ..addOption('models',
-        help:
-            'Comma-separated list of model paths for batch mode (e.g., model1.gguf,model2.gguf)')
-    ..addFlag('auto-detect',
-        help: 'Auto-detect model types from file extensions in batch mode',
-        defaultsTo: true)
+    ..addOption(
+      'model',
+      abbr: 'm',
+      help: 'Path to the model file (e.g., model.gguf)',
+      defaultsTo: 'cli-model',
+    )
+    ..addOption(
+      'injectors',
+      abbr: 'i',
+      help: 'Comma-separated list of injectors to use',
+      defaultsTo: 'memoryPressure,malformedInput',
+    )
+    ..addOption(
+      'models',
+      help:
+          'Comma-separated list of model paths for batch mode (e.g., model1.gguf,model2.gguf)',
+    )
+    ..addFlag(
+      'auto-detect',
+      help: 'Auto-detect model types from file extensions in batch mode',
+      defaultsTo: true,
+    )
     ..addFlag('parallel', help: 'Run batch tests in parallel')
-    ..addOption('batch-output',
-        help: 'Output file for batch report (JSON or Markdown)')
-    ..addOption('compare-reports',
-        help:
-            'Compare two report files (e.g., --compare-reports report1.json,report2.json)')
-    ..addOption('diff-output',
-        help: 'Output file for the diff report (Markdown or HTML)')
-    ..addFlag('diff-html',
-        help: 'Generate HTML diff report instead of Markdown')
-    ..addOption('template',
-        help: 'Path to a custom report template (.yaml, .yml, or .json)')
-    ..addOption('badge',
-        help: 'Output file path for generating an SVG status badge')
-    ..addOption('badge-type',
-        help:
-            'Type of status badge to generate: status, latency, memory, tests (default: status)',
-        defaultsTo: 'status')
-    ..addOption('output',
-        abbr: 'o', help: 'Output file path for the report (JSON or Markdown)')
+    ..addOption(
+      'batch-output',
+      help: 'Output file for batch report (JSON or Markdown)',
+    )
+    ..addOption(
+      'compare-reports',
+      help:
+          'Compare two report files (e.g., --compare-reports report1.json,report2.json)',
+    )
+    ..addOption(
+      'diff-output',
+      help: 'Output file for the diff report (Markdown or HTML)',
+    )
+    ..addFlag(
+      'diff-html',
+      help: 'Generate HTML diff report instead of Markdown',
+    )
+    ..addOption(
+      'output',
+      abbr: 'o',
+      help: 'Output file path for the report (JSON or Markdown)',
+    )
     ..addFlag('markdown', help: 'Output in Markdown format (instead of JSON)')
-    ..addFlag('html',
-        help: 'Output in HTML format (generates a self-contained HTML page)')
+    ..addFlag(
+      'html',
+      help: 'Output in HTML format (generates a self-contained HTML page)',
+    )
     ..addFlag('serve', help: 'Start the real-time monitoring server (SSE)')
-    ..addOption('port',
-        abbr: 'p',
-        help: 'Port for the SSE server (default: 8080)',
-        defaultsTo: '8080')
-    ..addOption('schedule',
-        help:
-            'Cron expression for scheduling automated tests (e.g., "0 2 * * *" for daily at 2am)')
-    ..addOption('report-dir',
-        help: 'Directory to store scheduled test reports',
-        defaultsTo: 'stress_reports')
+    ..addOption(
+      'port',
+      abbr: 'p',
+      help: 'Port for the SSE server (default: 8080)',
+      defaultsTo: '8080',
+    )
+    ..addOption(
+      'schedule',
+      help:
+          'Cron expression for scheduling automated tests (e.g., "0 2 * * *" for daily at 2am)',
+    )
+    ..addOption(
+      'report-dir',
+      help: 'Directory to store scheduled test reports',
+      defaultsTo: 'stress_reports',
+    )
     ..addFlag('baseline', help: 'Save the current report as a golden baseline')
-    ..addFlag('compare',
-        help: 'Compare the current report against the golden baseline')
-    ..addOption('tolerance',
-        abbr: 'l',
-        help: 'Tolerance percentage for baseline comparison',
-        defaultsTo: '10.0')
-    ..addOption('retry',
-        help: 'Number of retry attempts for failed tests', defaultsTo: '1')
-    ..addOption('flaky-threshold',
-        help: 'Number of failures to mark test as flaky (0 = disabled)',
-        defaultsTo: '0')
+    ..addFlag(
+      'compare',
+      help: 'Compare the current report against the golden baseline',
+    )
+    ..addOption(
+      'tolerance',
+      abbr: 'l',
+      help: 'Tolerance percentage for baseline comparison',
+      defaultsTo: '10.0',
+    )
+    ..addOption(
+      'retry',
+      help: 'Number of retry attempts for failed tests',
+      defaultsTo: '1',
+    )
+    ..addOption(
+      'flaky-threshold',
+      help: 'Number of failures to mark test as flaky (0 = disabled)',
+      defaultsTo: '0',
+    )
     ..addFlag('benchmark', help: 'Run in benchmark mode (no fault injection)')
     ..addOption('benchmark-output', help: 'Output file for benchmark report')
-    ..addOption('benchmark-runs',
-        help: 'Number of benchmark runs', defaultsTo: '10')
-    ..addOption('timeout',
-        abbr: 't', help: 'Timeout in seconds for each test', defaultsTo: '30')
-    ..addOption('db',
-        help:
-            'Path to SQLite database file for storing or retrieving historical reports')
-    ..addOption('db-history',
-        help:
-            'Query historical reports from SQLite database for specified model ID (or "all")')
-    ..addFlag('health-check',
-        help: 'Run a quick health check on the model and exit')
-    ..addFlag('profile', help: 'Run a single-inference profiler and exit')
-    ..addOption('profile-runs',
-        help: 'Number of profiling runs (default: 1)', defaultsTo: '1')
-    ..addOption('webhook-url',
-        help: 'Webhook URL to POST stress test results to')
-    ..addOption('webhook-type',
-        help: 'Webhook provider: slack, discord, or teams', defaultsTo: 'slack')
-    ..addFlag('webhook-on-pass',
-        help: 'Also send webhook when tests pass (default: only on failure)')
-    ..addOption('language',
-        help:
-            'Language for report generation: en, es, fr, de, pt (default: en)',
-        defaultsTo: 'en')
-    ..addOption('analyze-quantization',
-        help: 'Analyze quantization level of a model file (.onnx or .tflite)')
-    ..addOption('quant-output',
-        help: 'Output path for quantization analysis report (JSON or Markdown)')
-    ..addFlag('adaptive-chaos',
-        help:
-            'Enable adaptive chaos injection scaling with live resource telemetry')
-    ..addFlag('estimate',
-        help:
-            'Estimate test duration, peak memory, and battery cost before execution')
-    ..addOption('estimate-profile',
-        help:
-            'Device hardware profile for estimation: mobile, edge, tablet (default: mobile)',
-        defaultsTo: 'mobile')
-    ..addFlag('estimate-cloud',
-        help: 'Include estimated cloud API cost for hybrid/cloud models')
+    ..addOption(
+      'benchmark-runs',
+      help: 'Number of benchmark runs',
+      defaultsTo: '10',
+    )
+    ..addOption(
+      'timeout',
+      abbr: 't',
+      help: 'Timeout in seconds for each test',
+      defaultsTo: '30',
+    )
     ..addFlag('help', abbr: 'h', help: 'Show this help', negatable: false);
 
   try {
@@ -327,11 +332,13 @@ void main(List<String> arguments) async {
 
         final injectors = _buildInjectors(results, model);
 
-        items.add(BatchItem.autoDetect(
-          filePath: path,
-          model: model,
-          injectors: injectors,
-        ));
+        items.add(
+          BatchItem.autoDetect(
+            filePath: path,
+            model: model,
+            injectors: injectors,
+          ),
+        );
 
         log('Detected: $path -> ${detected.displayName}');
       }
@@ -483,7 +490,9 @@ void main(List<String> arguments) async {
     final benchmark = results['benchmark'] as bool;
     final benchmarkOutput = results['benchmark-output'] as String?;
 
-    log('Running stress test with injectors: ${injectors.map((i) => i.name).join(', ')}');
+    log(
+      'Running stress test with injectors: ${injectors.map((i) => i.name).join(', ')}',
+    );
 
     final report = await SateAI.stress(
       model: model,
