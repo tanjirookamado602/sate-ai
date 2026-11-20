@@ -7,21 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.13.0] - 2026-09-24
+
 ### Added
-- New `sate_cli` package — installable with `dart pub global activate sate_cli`
-  without requiring Flutter (Issue #119)
-- New `CLI` GitHub Actions workflow that runs on `dart:stable` to prove the
-  CLI works with no Flutter SDK installed
+- CI/CD Status Badges (Issue #91)
+  - `BadgeGenerator` for generating SVG status badges (shields.io format)
+  - `BadgeType` enum supporting `status`, `latency`, `memory`, and `tests` badges
+  - `StressReport.toBadge()` and `writeBadgeToFile()` helpers
+  - CLI flags `--badge` and `--badge-type`
+  - 12+ unit tests
 
 ### Changed
-- CLI entry point moved from `bin/sate_ai.dart` to `packages/sate_cli/bin/sate_ai.dart`
-- `lib/sate_ai_cli.dart` in the Flutter package now re-exports `sate_core`
-  and is marked deprecated (kept for backwards compatibility)
-- Refactored architecture to extract pure Dart core into `sate_core` package (Issue #118)
-  - Created standalone `packages/sate_core` package with no Flutter dependency
-  - Moved core types, injectors, analyzers, i18n, and mock adapters into `sate_core`
-  - Re-exported `sate_core` from root `sate_ai` and `sate_ai_cli` barrels
-  - Preserved Flutter-native adapters (`OnnxAdapter`, `TFLiteAdapter`, `FllamaAdapter`) in `sate_ai`
+- Documentation updated with CI/CD status badges usage
+
+## [0.12.0] - 2026-09-22
 
 ### Added
 - SQLite storage for historical reports (Issue #92)

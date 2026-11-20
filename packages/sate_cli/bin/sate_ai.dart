@@ -145,28 +145,25 @@ void main(List<String> arguments) async {
       defaultsTo: true,
     )
     ..addFlag('parallel', help: 'Run batch tests in parallel')
-    ..addOption(
-      'batch-output',
-      help: 'Output file for batch report (JSON or Markdown)',
-    )
-    ..addOption(
-      'compare-reports',
-      help:
-          'Compare two report files (e.g., --compare-reports report1.json,report2.json)',
-    )
-    ..addOption(
-      'diff-output',
-      help: 'Output file for the diff report (Markdown or HTML)',
-    )
-    ..addFlag(
-      'diff-html',
-      help: 'Generate HTML diff report instead of Markdown',
-    )
-    ..addOption(
-      'output',
-      abbr: 'o',
-      help: 'Output file path for the report (JSON or Markdown)',
-    )
+    ..addOption('batch-output',
+        help: 'Output file for batch report (JSON or Markdown)')
+    ..addOption('compare-reports',
+        help:
+            'Compare two report files (e.g., --compare-reports report1.json,report2.json)')
+    ..addOption('diff-output',
+        help: 'Output file for the diff report (Markdown or HTML)')
+    ..addFlag('diff-html',
+        help: 'Generate HTML diff report instead of Markdown')
+    ..addOption('template',
+        help: 'Path to a custom report template (.yaml, .yml, or .json)')
+    ..addOption('badge',
+        help: 'Output file path for generating an SVG status badge')
+    ..addOption('badge-type',
+        help:
+            'Type of status badge to generate: status, latency, memory, tests (default: status)',
+        defaultsTo: 'status')
+    ..addOption('output',
+        abbr: 'o', help: 'Output file path for the report (JSON or Markdown)')
     ..addFlag('markdown', help: 'Output in Markdown format (instead of JSON)')
     ..addFlag(
       'html',
@@ -520,46 +517,6 @@ void main(List<String> arguments) async {
       final type = BadgeTypeX.parse(badgeTypeStr);
       await report.writeBadgeToFile(badgePath, type: type);
       log('SVG status badge written to $badgePath');
-    }
-
-    final dbPath = results['db'] as String?;
-    if (dbPath != null) {
-      final db = ReportDatabase(dbPath);
-      await db.open();
-      final id = await db.insertReport(report);
-      log('Report saved to SQLite database ($dbPath) with ID: $id');
-      await db.close();
-    }
-
-    final webhookUrl = results['webhook-url'] as String?;
-    if (webhookUrl != null) {
-      final typeStr = (results['webhook-type'] as String).toLowerCase();
-      final sendOnPass = results['webhook-on-pass'] as bool;
-
-      final WebhookType type;
-      switch (typeStr) {
-        case 'slack':
-          type = WebhookType.slack;
-          break;
-        case 'discord':
-          type = WebhookType.discord;
-          break;
-        case 'teams':
-          type = WebhookType.teams;
-          break;
-        default:
-          log('Unknown webhook type: $typeStr. Expected slack, discord, or teams.');
-          exit(2);
-      }
-
-      if (!report.passed || sendOnPass) {
-        final notifier = WebhookNotifier(url: webhookUrl, type: type);
-        final result = await notifier.send(report);
-        notifier.dispose();
-        log(result.message);
-      } else {
-        log('Skipping webhook (report passed and --webhook-on-pass not set).');
-      }
     }
 
     final templatePath = results['template'] as String?;
