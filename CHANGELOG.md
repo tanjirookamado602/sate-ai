@@ -7,7 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.13.0] - 2026-09-24
+### Added
+- Multi-language support for reports (Issue #95)
+  - `ReportLanguage` enum supporting English (`en`), Spanish (`es`), French (`fr`), German (`de`), and Portuguese (`pt`)
+  - `I18n` class and `ReportLocalizer` for zero-dependency localized report rendering
+  - `toMarkdownLocalized()` and `toHtmlLocalized()` methods on `StressReport`
+  - CLI flag `--language` to generate reports in target languages
+  - 10+ unit tests covering all supported languages
+- Webhook notifications for stress test results (Issue #94)
+  - `WebhookNotifier` supporting Slack, Discord, and Microsoft Teams
+  - `WebhookPayload` builders for each provider
+  - CLI flags `--webhook-url`, `--webhook-type`, `--webhook-on-pass`
+  - 10+ unit tests
+- Detailed model performance profiling (Issue #93)
+  - `ProfileResult` with per-stage timing and memory
+  - `InferenceProfiler` for staged profiling
+  - CLI flags `--profile` and `--profile-runs`
+  - 10+ unit tests
+
+## [0.11.0] - 2026-09-26
 
 ### Added
 - CI/CD Status Badges (Issue #91)

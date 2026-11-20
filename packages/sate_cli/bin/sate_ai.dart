@@ -209,17 +209,31 @@ void main(List<String> arguments) async {
     )
     ..addFlag('benchmark', help: 'Run in benchmark mode (no fault injection)')
     ..addOption('benchmark-output', help: 'Output file for benchmark report')
-    ..addOption(
-      'benchmark-runs',
-      help: 'Number of benchmark runs',
-      defaultsTo: '10',
-    )
-    ..addOption(
-      'timeout',
-      abbr: 't',
-      help: 'Timeout in seconds for each test',
-      defaultsTo: '30',
-    )
+    ..addOption('benchmark-runs',
+        help: 'Number of benchmark runs', defaultsTo: '10')
+    ..addOption('timeout',
+        abbr: 't', help: 'Timeout in seconds for each test', defaultsTo: '30')
+    ..addOption('db',
+        help:
+            'Path to SQLite database file for storing or retrieving historical reports')
+    ..addOption('db-history',
+        help:
+            'Query historical reports from SQLite database for specified model ID (or "all")')
+    ..addFlag('health-check',
+        help: 'Run a quick health check on the model and exit')
+    ..addFlag('profile', help: 'Run a single-inference profiler and exit')
+    ..addOption('profile-runs',
+        help: 'Number of profiling runs (default: 1)', defaultsTo: '1')
+    ..addOption('webhook-url',
+        help: 'Webhook URL to POST stress test results to')
+    ..addOption('webhook-type',
+        help: 'Webhook provider: slack, discord, or teams', defaultsTo: 'slack')
+    ..addFlag('webhook-on-pass',
+        help: 'Also send webhook when tests pass (default: only on failure)')
+    ..addOption('language',
+        help:
+            'Language for report generation: en, es, fr, de, pt (default: en)',
+        defaultsTo: 'en')
     ..addFlag('help', abbr: 'h', help: 'Show this help', negatable: false);
 
   try {
