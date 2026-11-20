@@ -39,11 +39,6 @@ export 'src/core/model_type_detector.dart';
 export 'src/core/model_factory.dart';
 export 'src/core/profile_result.dart';
 export 'src/core/inference_profiler.dart';
-export 'src/core/webhook_payload.dart';
-export 'src/core/webhook_notifier.dart';
-export 'src/i18n/i18n.dart';
-export 'src/i18n/report_language.dart';
-export 'src/i18n/report_localizer.dart';
 export 'src/adapters/model_adapter.dart';
 export 'src/adapters/mock_adapter.dart';
 
