@@ -15,7 +15,7 @@ project, run tests, and submit changes.
 ### Clone and bootstrap
 
 ```bash
-git clone https://github.com/assassinaj602/sate_ai.git
+git clone https://github.com/tanjirookamado602/sate-ai.git
 cd sate_ai
 melos bootstrap
 ```

@@ -3,7 +3,7 @@
 Fault Injection Framework for On-Device AI Models in Flutter
 
 > 🔍 **Looking for runtime observability?** Pair SATE AI with
-> [EdgePulse](https://github.com/assassinaj602/edgepulse): the observability
+> [EdgePulse](https://github.com/tanjirookamado602/edgepulse): the observability
 > companion that traces memory, thermal state, battery draw, and latency during
 > inference, and works directly alongside SATE AI's fault injection.
 
@@ -13,8 +13,8 @@ Fault Injection Framework for On-Device AI Models in Flutter
 [![DOI - SATE AI](https://zenodo.org/badge/DOI/10.5281/zenodo.23250418.svg)](https://doi.org/10.5281/zenodo.23250418)
 [![DOI - EdgePulse](https://zenodo.org/badge/DOI/10.5281/zenodo.23248718.svg)](https://doi.org/10.5281/zenodo.23248718)
 [![DOI - Joint Study](https://zenodo.org/badge/DOI/10.5281/zenodo.23262270.svg)](https://doi.org/10.5281/zenodo.23262270)
-[![GitHub stars](https://img.shields.io/github/stars/assassinaj602/sate_ai?style=flat)](https://github.com/assassinaj602/sate_ai/stargazers)
-[![CI](https://github.com/assassinaj602/sate_ai/actions/workflows/test.yml/badge.svg)](https://github.com/assassinaj602/sate_ai/actions)
+[![GitHub stars](https://img.shields.io/github/stars/tanjirookamado602/sate-ai?style=flat)](https://github.com/tanjirookamado602/sate-ai/stargazers)
+[![CI](https://github.com/tanjirookamado602/sate-ai/actions/workflows/test.yml/badge.svg)](https://github.com/tanjirookamado602/sate-ai/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Flutter](https://img.shields.io/badge/Flutter-3.10%2B-blue.svg)](https://flutter.dev)
 
@@ -274,10 +274,10 @@ sate_ai create injector MyCustomInjector
 
 ## Documentation
 
-- [Website](https://assassinaj602.github.io/sate_ai/)
-- [Project Showcase Gallery](https://assassinaj602.github.io/sate_ai/showcase.html)
+- [Website](https://tanjirookamado602.github.io/sate-ai/)
+- [Project Showcase Gallery](https://tanjirookamado602.github.io/sate-ai/showcase.html)
 - [API Reference](https://pub.dev/documentation/sate_ai)
-- [Research Paper](https://assassinaj602.github.io/sate_ai/paper.html)
+- [Research Paper](https://tanjirookamado602.github.io/sate-ai/paper.html)
 - [Cost and Resource Estimation Cookbook](../../cookbook/cost_estimation.md)
 - [Adaptive Chaos Testing Cookbook](../../cookbook/adaptive_chaos_testing.md)
 - [Contributing Guide](../../CONTRIBUTING.md)

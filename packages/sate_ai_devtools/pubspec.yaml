@@ -2,7 +2,7 @@ name: sate_ai_devtools
 description: DevTools plugin for SATE AI stress testing framework.
 version: 0.1.0
 publish_to: none
-homepage: https://github.com/assassinaj602/sate_ai
+homepage: https://github.com/tanjirookamado602/sate-ai
 
 environment:
   sdk: ">=3.0.0 <4.0.0"

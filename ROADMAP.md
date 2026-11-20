@@ -93,4 +93,4 @@ Targeting formal stabilization of cross-platform APIs, baseline report compatibi
 
 ## 🤝 Community Feedback & Contributions
 
-Roadmap priorities are shaped by developer needs across mobile, edge, and web AI. If there is a runtime or language you would like prioritized, please open a discussion or proposal in [GitHub Issues](https://github.com/assassinaj602/sate_ai/issues).
+Roadmap priorities are shaped by developer needs across mobile, edge, and web AI. If there is a runtime or language you would like prioritized, please open a discussion or proposal in [GitHub Issues](https://github.com/tanjirookamado602/sate-ai/issues).

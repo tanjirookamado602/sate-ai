@@ -60,8 +60,8 @@ SATE AI is built for the global engineering community. We have established four 
 
 Building reliable software at the edge is a collective challenge. If you are deploying models on mobile or IoT devices, we would love your input:
 
-- **Star and Watch the Repository**: <https://github.com/assassinaj602/sate_ai>
-- **Read the Documentation**: <https://assassinaj602.github.io/sate_ai/>
+- **Star and Watch the Repository**: <https://github.com/tanjirookamado602/sate-ai>
+- **Read the Documentation**: <https://tanjirookamado602.github.io/sate-ai/>
 - **Join the Discussions**: Open an issue or discussion on GitHub to share failure modes you have observed in production.
 - **Contribute**: Check out issues labeled `good first issue` and `help wanted`.
 

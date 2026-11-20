@@ -16,7 +16,7 @@
 
 ## 🔗 Related Resources
 
-- [SATE AI GitHub Repository](https://github.com/assassinaj602/sate_ai)
+- [SATE AI GitHub Repository](https://github.com/tanjirookamado602/sate-ai)
 - [Common Setup & Fixtures](common-setup.md)
 - [Multi-Injector Integration Guide](integration-guide.md)
 - [Cookbook Landing Page](index.md)

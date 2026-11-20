@@ -39,7 +39,7 @@ Why does your on-device AI model crash in production even after passing 100% uni
 Because phone OS runtimes are hostile: low-memory killers, thermal throttling, and sensor jitter.
 
 I wrote a 5-part deep dive on building SATE AI, the open-source chaos engineering engine for edge ML:
-https://assassinaj602.github.io/sate_ai/blog.html
+https://tanjirookamado602.github.io/sate-ai/blog.html
 ```
 
 #### LinkedIn
@@ -50,7 +50,7 @@ Over the past months, I built SATE AI: an open-source, cross-platform fault inje
 
 Today, I am sharing our complete 5-part engineering blog series covering the problem space, modular architecture, physical hardware benchmarks on Android devices, lessons learned, and the future roadmap.
 
-Check out the series: https://assassinaj602.github.io/sate_ai/blog.html
+Check out the series: https://tanjirookamado602.github.io/sate-ai/blog.html
 ```
 
 #### Reddit (r/MachineLearning, r/FlutterDev, r/AndroidDev)
@@ -61,7 +61,7 @@ Body:
 Hey everyone! Over the last several months I have been working on SATE AI, an open-source framework designed to stress-test on-device ML models (TFLite, ONNX, llama.cpp) against real-world device hostility: memory pressure spikes, thermal throttling, corrupted tensors, and quantization drift.
 
 I put together a detailed 5-part technical blog series detailing our architecture, empirical benchmarks on physical hardware, lessons learned, and what is next:
-https://assassinaj602.github.io/sate_ai/blog.html
+https://tanjirookamado602.github.io/sate-ai/blog.html
 
 Would love feedback from engineers deploying models to edge devices!
 ```

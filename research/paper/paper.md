@@ -38,7 +38,7 @@ abstract: |
   closed-loop adaptive chaos testing dynamically sustains stress without triggering
   unrecoverable kernel kills. Framework overhead is minimal (sub-0.4% execution latency
   penalty). SATE AI is open-source under the MIT license at
-  \url{https://github.com/assassinaj602/sate_ai}.
+  \url{https://github.com/tanjirookamado602/sate-ai}.
 keywords:
   - on-device AI
   - mobile machine learning
@@ -597,7 +597,7 @@ closed-loop adaptive chaos sustains peak stress without triggering unrecoverable
 terminations. Framework instrumentation overhead is negligible ($< 0.4\%$).
 
 SATE AI is open-source under the MIT license at
-[\texttt{https://github.com/assassinaj602/sate\_ai}](https://github.com/assassinaj602/sate_ai).
+[\texttt{https://github.com/tanjirookamado602/sate\_ai}](https://github.com/tanjirookamado602/sate-ai).
 
 ---
 

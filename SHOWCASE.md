@@ -2,7 +2,7 @@
 
 Discover real-world production mobile applications, edge AI pipelines, and academic research battle-hardened with the SATE AI fault injection framework.
 
-View the live interactive gallery at [**assassinaj602.github.io/sate_ai/showcase.html**](https://assassinaj602.github.io/sate_ai/showcase.html).
+View the live interactive gallery at [**tanjirookamado602.github.io/sate-ai/showcase.html**](https://tanjirookamado602.github.io/sate-ai/showcase.html).
 
 ---
 
@@ -58,10 +58,10 @@ Are you using SATE AI to test, benchmark, or harden on-device AI models in your 
 Add the official **Tested with SATE AI** badge to your project README:
 
 ```markdown
-[![Tested with SATE AI](https://img.shields.io/badge/tested_with-SATE_AI-34d399.svg)](https://github.com/assassinaj602/sate_ai)
+[![Tested with SATE AI](https://img.shields.io/badge/tested_with-SATE_AI-34d399.svg)](https://github.com/tanjirookamado602/sate-ai)
 ```
 
 Preview:
 
-[![Tested with SATE AI](https://img.shields.io/badge/tested_with-SATE_AI-34d399.svg)](https://github.com/assassinaj602/sate_ai)
+[![Tested with SATE AI](https://img.shields.io/badge/tested_with-SATE_AI-34d399.svg)](https://github.com/tanjirookamado602/sate-ai)
 

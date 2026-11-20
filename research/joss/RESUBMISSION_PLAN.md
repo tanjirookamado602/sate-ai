@@ -1,6 +1,6 @@
 # SATE AI - JOSS Resubmission Plan and Compliance Checklist
 
-> **Tracking Issue**: [#46](https://github.com/assassinaj602/sate_ai/issues/46)  
+> **Tracking Issue**: [#46](https://github.com/tanjirookamado602/sate-ai/issues/46)  
 > **Target Resubmission Date**: February 2027 (6 months of continuous public history)  
 > **Status**: Ready for resubmission upon reaching the 6-month public development milestone.
 
@@ -44,7 +44,7 @@ SATE AI was initially submitted during its early release cycle. This plan establ
 
 ### C. Documentation & Usability
 - [x] **Installation Instructions**: Complete setup steps for Dart, Flutter, Kotlin, and TypeScript.
-- [x] **API Reference**: Hosted online documentation at <https://assassinaj602.github.io/sate_ai/>.
+- [x] **API Reference**: Hosted online documentation at <https://tanjirookamado602.github.io/sate-ai/>.
 - [x] **Step-by-Step Cookbooks**: End-to-end cookbooks covering common testing recipes.
 - [x] **Interactive Examples**: Functional example applications across Flutter and CLI.
 

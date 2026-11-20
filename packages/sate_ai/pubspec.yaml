@@ -1,9 +1,9 @@
 name: sate_ai
 version: 0.11.0
 description: A fault injection framework for testing on-device AI models in Flutter. Simulate memory pressure, malformed inputs, and degradation to catch failures before deployment.
-homepage: https://github.com/assassinaj602/sate_ai
-repository: https://github.com/assassinaj602/sate_ai
-issue_tracker: https://github.com/assassinaj602/sate_ai/issues
+homepage: https://github.com/tanjirookamado602/sate-ai
+repository: https://github.com/tanjirookamado602/sate-ai
+issue_tracker: https://github.com/tanjirookamado602/sate-ai/issues
 documentation: https://pub.dev/documentation/sate_ai
 topics:
   - testing

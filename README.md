@@ -5,8 +5,8 @@ Fault Injection Framework for On-Device AI Models in Flutter
 [![pub package](https://img.shields.io/pub/v/sate_ai.svg)](https://pub.dev/packages/sate_ai)
 [![pub points](https://img.shields.io/pub/points/sate_ai)](https://pub.dev/packages/sate_ai/score)
 [![pub likes](https://img.shields.io/pub/likes/sate_ai)](https://pub.dev/packages/sate_ai/score)
-[![GitHub stars](https://img.shields.io/github/stars/assassinaj602/sate_ai?style=flat)](https://github.com/assassinaj602/sate_ai/stargazers)
-[![CI](https://github.com/assassinaj602/sate_ai/actions/workflows/test.yml/badge.svg)](https://github.com/assassinaj602/sate_ai/actions)
+[![GitHub stars](https://img.shields.io/github/stars/tanjirookamado602/sate-ai?style=flat)](https://github.com/tanjirookamado602/sate-ai/stargazers)
+[![CI](https://github.com/tanjirookamado602/sate-ai/actions/workflows/test.yml/badge.svg)](https://github.com/tanjirookamado602/sate-ai/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Flutter](https://img.shields.io/badge/Flutter-3.10%2B-blue.svg)](https://flutter.dev)
 
@@ -889,9 +889,9 @@ sate_ai create injector MyCustomInjector
 
 ## Documentation
 
-- [Website](https://assassinaj602.github.io/sate_ai/)
+- [Website](https://tanjirookamado602.github.io/sate-ai/)
 - [API Reference](https://pub.dev/documentation/sate_ai)
-- [Research Paper](https://assassinaj602.github.io/sate_ai/paper.html)
+- [Research Paper](https://tanjirookamado602.github.io/sate-ai/paper.html)
 - [Contributing Guide](CONTRIBUTING.md)
 
 ## Contributing

@@ -84,7 +84,7 @@ The empirical findings demonstrated:
 
 # Availability and Documentation
 
-`SATE AI` is licensed under the OSI-approved MIT License. Source code, documentation, interactive tutorials, and cookbooks are publicly available on GitHub at <https://github.com/assassinaj602/sate_ai>. Comprehensive online documentation is hosted at <https://assassinaj602.github.io/sate_ai/>.
+`SATE AI` is licensed under the OSI-approved MIT License. Source code, documentation, interactive tutorials, and cookbooks are publicly available on GitHub at <https://github.com/tanjirookamado602/sate-ai>. Comprehensive online documentation is hosted at <https://tanjirookamado602.github.io/sate-ai/>.
 
 # Acknowledgements
 

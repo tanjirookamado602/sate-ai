@@ -39,5 +39,5 @@ sate --help
 ## 🌐 Online Interactive Hub
 
 All video episodes, interactive code playgrounds, and searchable transcripts are hosted on our documentation website:
-- **Interactive Portal**: <https://assassinaj602.github.io/sate_ai/tutorials.html>
+- **Interactive Portal**: <https://tanjirookamado602.github.io/sate-ai/tutorials.html>
 - **Full Video Repository**: Available on the [SATE AI YouTube Channel](https://youtube.com/@sate_ai_official)
