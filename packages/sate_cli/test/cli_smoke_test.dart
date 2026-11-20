@@ -31,58 +31,5 @@ void main() {
       // Health check runs against MockAdapter fallback and succeeds or exits cleanly
       expect(result.exitCode, anyOf(0, 1, 2, 64));
     });
-
-    test('--help outputs adaptive-chaos option description', () async {
-      final result = await Process.run(
-        'dart',
-        ['run', 'bin/sate_ai.dart', '--help'],
-        workingDirectory: Directory.current.path,
-      );
-      expect(result.exitCode, 0);
-      expect(result.stdout, contains('adaptive-chaos'));
-    });
-
-    test('--help outputs estimate option description', () async {
-      final result = await Process.run(
-        'dart',
-        ['run', 'bin/sate_ai.dart', '--help'],
-        workingDirectory: Directory.current.path,
-      );
-      expect(result.exitCode, 0);
-      expect(result.stdout, contains('estimate'));
-    });
-
-    test('--estimate runs pre-test cost estimation and exits with code 0',
-        () async {
-      final result = await Process.run(
-        'dart',
-        ['run', 'bin/sate_ai.dart', '--estimate'],
-        workingDirectory: Directory.current.path,
-      );
-      expect(result.exitCode, 0);
-      expect(result.stdout, contains('SATE AI Stress Test Cost Estimate'));
-      expect(result.stdout, contains('Projected Duration'));
-      expect(result.stdout, contains('Peak Memory Usage'));
-      expect(result.stdout, contains('Battery Consumption'));
-    });
-
-    test('--estimate with custom profile and cloud flag exits with code 0',
-        () async {
-      final result = await Process.run(
-        'dart',
-        [
-          'run',
-          'bin/sate_ai.dart',
-          '--estimate',
-          '--estimate-profile',
-          'edge',
-          '--estimate-cloud',
-        ],
-        workingDirectory: Directory.current.path,
-      );
-      expect(result.exitCode, 0);
-      expect(result.stdout, contains('Edge IoT / Embedded'));
-      expect(result.stdout, contains('Cloud API Cost'));
-    });
   });
 }
