@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- New `sate_cli` package - installable with `dart pub global activate sate_cli`
+  without requiring Flutter (Issue #119)
+- New `CLI` GitHub Actions workflow that runs on `dart:stable` to prove the
+  CLI works with no Flutter SDK installed
+
 ### Changed
 - Refactored architecture to extract pure Dart core into `sate_core` package (Issue #118)
   - Created standalone `packages/sate_core` package with no Flutter dependency
