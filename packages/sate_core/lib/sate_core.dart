@@ -32,16 +32,11 @@ export 'src/core/profile_result.dart';
 export 'src/core/report_database.dart';
 export 'src/core/template_engine.dart';
 export 'src/core/template_loader.dart';
-export 'src/core/badge_generator.dart';
-export 'src/core/badge_type.dart';
-export 'src/core/report_database.dart';
-export 'src/core/health_check_result.dart';
-export 'src/core/model_type_detector.dart';
-export 'src/core/model_factory.dart';
-export 'src/core/profile_result.dart';
-export 'src/core/inference_profiler.dart';
 export 'src/core/webhook_payload.dart';
 export 'src/core/webhook_notifier.dart';
+export 'src/core/quantization_report.dart';
+
+// Adapters
 export 'src/adapters/model_adapter.dart';
 export 'src/adapters/mock_adapter.dart';
 
@@ -57,7 +52,6 @@ export 'src/injectors/gpu_memory_pressure_injector.dart';
 export 'src/injectors/data_corruption_injector.dart';
 export 'src/injectors/model_version_mismatch_injector.dart';
 export 'src/injectors/network_latency_drop_injector.dart';
-export 'src/injectors/adaptive_chaos_injector.dart';
 
 // Analyzers
 export 'src/core/analyzers/quantization_analyzer.dart';

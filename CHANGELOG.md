@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Refactored architecture to extract pure Dart core into `sate_core` package (Issue #118)
+  - Created standalone `packages/sate_core` package with no Flutter dependency
+  - Moved core types, injectors, analyzers, i18n, and mock adapters into `sate_core`
+  - Re-exported `sate_core` from root `sate_ai` and `sate_ai_cli` barrels
+  - Preserved Flutter-native adapters (`OnnxAdapter`, `TFLiteAdapter`, `FllamaAdapter`) in `sate_ai`
+
 ### Added
 - Webhook notifications for stress test results (Issue #94)
   - `WebhookNotifier` supporting Slack, Discord, and Microsoft Teams
