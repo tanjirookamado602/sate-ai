@@ -115,6 +115,7 @@ reliability before shipping to production.
 
 - 11 fault injectors covering memory, I/O, thermal, and network failure modes
 - Adaptive Chaos Injection modulated by live device CPU, RAM, and thermal telemetry
+- Stress test cost and resource estimation for duration, memory, battery, and cloud API spend
 - Model Quantization Analyzer for ONNX and TFLite models
 - 8 model adapters: MockAdapter, OnnxAdapter, TFLiteAdapter, FllamaAdapter,
   MediaPipeAdapter, CoreMLAdapter, GoogleMLKitAdapter, and custom adapters
