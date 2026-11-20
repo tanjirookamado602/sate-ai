@@ -7,7 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.14.0] - 2026-09-25
+### Added
+- Webhook notifications for stress test results (Issue #94)
+  - `WebhookNotifier` supporting Slack, Discord, and Microsoft Teams
+  - `WebhookPayload` builders for each provider
+  - CLI flags `--webhook-url`, `--webhook-type`, `--webhook-on-pass`
+  - 10+ unit tests
+- Detailed model performance profiling (Issue #93)
+  - `ProfileResult` with per-stage timing and memory
+  - `InferenceProfiler` for staged profiling
+  - CLI flags `--profile` and `--profile-runs`
+  - 10+ unit tests
+
+## [0.11.0] - 2026-09-26
 
 ### Added
 - SQLite storage for historical reports (Issue #92)

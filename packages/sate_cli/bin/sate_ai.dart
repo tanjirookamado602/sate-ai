@@ -230,14 +230,6 @@ void main(List<String> arguments) async {
         help: 'Webhook provider: slack, discord, or teams', defaultsTo: 'slack')
     ..addFlag('webhook-on-pass',
         help: 'Also send webhook when tests pass (default: only on failure)')
-    ..addOption('language',
-        help:
-            'Language for report generation: en, es, fr, de, pt (default: en)',
-        defaultsTo: 'en')
-    ..addOption('analyze-quantization',
-        help: 'Analyze quantization level of a model file (.onnx or .tflite)')
-    ..addOption('quant-output',
-        help: 'Output path for quantization analysis report (JSON or Markdown)')
     ..addFlag('help', abbr: 'h', help: 'Show this help', negatable: false);
 
   try {
@@ -525,6 +517,37 @@ void main(List<String> arguments) async {
       final id = await db.insertReport(report);
       log('Report saved to SQLite database ($dbPath) with ID: $id');
       await db.close();
+    }
+
+    final webhookUrl = results['webhook-url'] as String?;
+    if (webhookUrl != null) {
+      final typeStr = (results['webhook-type'] as String).toLowerCase();
+      final sendOnPass = results['webhook-on-pass'] as bool;
+
+      final WebhookType type;
+      switch (typeStr) {
+        case 'slack':
+          type = WebhookType.slack;
+          break;
+        case 'discord':
+          type = WebhookType.discord;
+          break;
+        case 'teams':
+          type = WebhookType.teams;
+          break;
+        default:
+          log('Unknown webhook type: $typeStr. Expected slack, discord, or teams.');
+          exit(2);
+      }
+
+      if (!report.passed || sendOnPass) {
+        final notifier = WebhookNotifier(url: webhookUrl, type: type);
+        final result = await notifier.send(report);
+        notifier.dispose();
+        log(result.message);
+      } else {
+        log('Skipping webhook (report passed and --webhook-on-pass not set).');
+      }
     }
 
     final templatePath = results['template'] as String?;
