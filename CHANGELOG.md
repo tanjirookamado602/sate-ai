@@ -7,23 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-- Model Quantization Analyzer (Issue #96)
-  - Pure-Dart structural binary analyzer for ONNX Protobuf and TFLite FlatBuffer models
-  - `QuantizationAnalyzer`, `OnnxQuantizationAnalyzer`, and `TfliteQuantizationAnalyzer`
-  - Precision level detection (`float32`, `float16`, `int8`, `uint8`, `int16`) and warning flags
-  - CLI flags `--analyze-quantization` and `--quant-output`
-
-## [0.11.0] - 2026-10-03
+## [0.14.0] - 2026-09-25
 
 ### Added
-- Detailed model performance profiling (Issue #93)
-  - `ProfileResult` with per-stage timing and memory
-  - `InferenceProfiler` for staged profiling
-  - CLI flags `--profile` and `--profile-runs`
-  - 10+ unit tests
+- SQLite storage for historical reports (Issue #92)
+  - `ReportDatabase` class for local report persistence using `sqflite_common_ffi`
+  - CRUD operations (`insertReport`, `queryRecent`, `queryByModel`, `queryByDateRange`, `count`, `deleteByModel`, `deleteAll`)
+  - CLI `--db` and `--db-history` options to automatically save and query historical stress reports
+  - Unit tests covering DB initialization, query filters, data integrity, and error handling
 
-## [0.11.0] - 2026-09-26
+### Changed
+- Documentation and CLI usage updated with SQLite database storage options
+
+## [0.13.0] - 2026-09-24
 
 ### Added
 - CI/CD Status Badges (Issue #91)

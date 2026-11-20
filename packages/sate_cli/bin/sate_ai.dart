@@ -249,25 +249,6 @@ void main(List<String> arguments) async {
       exit(0);
     }
 
-    final quantModelPath = results['analyze-quantization'] as String?;
-    if (quantModelPath != null) {
-      final file = File(quantModelPath);
-      final quantReport = await QuantizationAnalyzer.analyzeFile(file);
-      final quantOutputFile = results['quant-output'] as String?;
-
-      final content = (results['markdown'] as bool)
-          ? quantReport.toMarkdown()
-          : jsonEncode(quantReport.toJson());
-
-      if (quantOutputFile != null) {
-        await File(quantOutputFile).writeAsString(content);
-        log('Quantization analysis report written to $quantOutputFile');
-      } else {
-        log(quantReport.toMarkdown());
-      }
-      exit(0);
-    }
-
     final dbHistory = results['db-history'] as String?;
     if (dbHistory != null) {
       final dbPath = results['db'] as String? ?? 'sate_ai_reports.db';
@@ -535,6 +516,15 @@ void main(List<String> arguments) async {
       final type = BadgeTypeX.parse(badgeTypeStr);
       await report.writeBadgeToFile(badgePath, type: type);
       log('SVG status badge written to $badgePath');
+    }
+
+    final dbPath = results['db'] as String?;
+    if (dbPath != null) {
+      final db = ReportDatabase(dbPath);
+      await db.open();
+      final id = await db.insertReport(report);
+      log('Report saved to SQLite database ($dbPath) with ID: $id');
+      await db.close();
     }
 
     final templatePath = results['template'] as String?;

@@ -1,6 +1,6 @@
 import 'dart:io';
-import 'package:test/test.dart';
-import 'package:sate_core/sate_core.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:sate_ai/sate_ai.dart';
 
 void main() {
   late String dbPath;
