@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Create dummy model file
+      - name: Create Dummy Model Directory
         run: mkdir -p models && touch models/dummy.gguf
         shell: bash
 
