@@ -186,9 +186,9 @@ jobs:
   sate-web:
     name: sate_web (TypeScript)
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: packages/sate_web
+    needs: [test, example]
+    if: github.event_name == 'release' || startsWith(github.ref, 'refs/tags/')
+
     steps:
       - uses: actions/checkout@v4
 
