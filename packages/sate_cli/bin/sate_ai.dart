@@ -224,6 +224,20 @@ void main(List<String> arguments) async {
     ..addFlag('profile', help: 'Run a single-inference profiler and exit')
     ..addOption('profile-runs',
         help: 'Number of profiling runs (default: 1)', defaultsTo: '1')
+    ..addOption('webhook-url',
+        help: 'Webhook URL to POST stress test results to')
+    ..addOption('webhook-type',
+        help: 'Webhook provider: slack, discord, or teams', defaultsTo: 'slack')
+    ..addFlag('webhook-on-pass',
+        help: 'Also send webhook when tests pass (default: only on failure)')
+    ..addOption('language',
+        help:
+            'Language for report generation: en, es, fr, de, pt (default: en)',
+        defaultsTo: 'en')
+    ..addOption('analyze-quantization',
+        help: 'Analyze quantization level of a model file (.onnx or .tflite)')
+    ..addOption('quant-output',
+        help: 'Output path for quantization analysis report (JSON or Markdown)')
     ..addFlag('help', abbr: 'h', help: 'Show this help', negatable: false);
 
   try {
