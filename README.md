@@ -129,7 +129,6 @@ reliability before shipping to production.
 - CI/CD status badges (SVG)
 - Custom report templates (JSON/YAML)
 - Interactive guided onboarding tutorial in the Flutter example app
-- Project showcase gallery featuring real-world deployments and edge AI benchmarks
 - Stress scheduler (cron)
 - VS Code extension
 
