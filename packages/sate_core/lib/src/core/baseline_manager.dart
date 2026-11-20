@@ -62,7 +62,8 @@ class BaselineManager {
     // ⚡ Bolt: Cache file modification times to avoid O(N log N) synchronous disk I/O
     // statSync() in a sort comparator causes repeated disk access.
     // Instead, we stat asynchronously once per file and sort the cached results.
-    final filesWithStats = await Future.wait(
+    // ignore: unused_local_variable
+      final filesWithStats = await Future.wait(
       files.map((file) async {
         final stat = await file.stat();
         return MapEntry(file as File, stat.modified);

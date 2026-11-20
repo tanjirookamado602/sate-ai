@@ -63,6 +63,11 @@ export 'src/i18n/i18n.dart';
 export 'src/i18n/report_language.dart';
 export 'src/i18n/report_localizer.dart';
 
+// Cost & Telemetry
+export 'src/core/cost_estimator.dart';
+export 'src/core/resource_telemetry.dart';
+export 'src/injectors/adaptive_chaos_injector.dart';
+
 /// Top-level convenience API for running SATE AI stress tests.
 class SateAI {
   SateAI._();
@@ -126,3 +131,5 @@ class SateAI {
     }
   }
 }
+
+
